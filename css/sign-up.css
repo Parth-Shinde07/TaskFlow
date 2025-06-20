@@ -140,6 +140,6 @@ input:focus {
 
 .login-link a:hover {
   color: #3182ce;
-  text-decoration: underline;
+  text-decoration: none;
 }
 

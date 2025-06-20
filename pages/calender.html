@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Calendar</title>
+  <link rel="stylesheet" href="../css/calender.css">
+  <!-- FullCalendar & Modal CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="calendar-container">
+        <h2><i class="fas fa-calendar-alt"></i> Calendar</h2>
+        <div id="calendar"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Task Details Modal (hidden by default) -->
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle">Task Details</h3>
+      <p><strong>Due:</strong> <span id="modalDueDate"></span></p>
+      <p><strong>Priority:</strong> <span id="modalPriority" class="priority-tag"></span></p>
+      <p id="modalDescription"></p>
+      <button id="editTask" class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <script src="../js/calender.js"></script>
+</body>
+</html>
