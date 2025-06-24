@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="../css/setting.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="settings-container">
+        <h1 class="settings-title">Settings</h1>
+        
+        <!-- Profile Section -->
+        <div class="settings-section">
+            <h2 class="section-title">Profile</h2>
+            <div class="profile-content">
+                <div class="profile-picture">
+                    <img src="../img/software-engg.jpg" alt="Profile Picture" id="profile-img">
+                    <button class="change-photo-btn">Change Photo</button>
+                </div>
+                <div class="profile-info">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" value="John Doe" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="john.doe@example.com" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" readonly>UX Designer & Frontend Developer</textarea>
+                    </div>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Theme Toggle Section -->
+        <div class="settings-section">
+            <h2 class="section-title">Theme Preferences</h2>
+            <div class="theme-toggle">
+                <span>Light Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Dark Mode</span>
+            </div>
+        </div>
+        
+        <!-- Notification Preferences Section -->
+        <div class="settings-section">
+            <h2 class="section-title">Notification Preferences</h2>
+            <div class="notification-preferences">
+                <div class="preference-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        <span class="preference-label">Email Notifications</span>
+                    </label>
+                </div>
+                <div class="preference-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        <span class="preference-label">Push Notifications</span>
+                    </label>
+                </div>
+                <div class="preference-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="preference-label">SMS Notifications</span>
+                    </label>
+                </div>
+                <div class="preference-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        <span class="preference-label">Newsletter</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/setting.js"></script>
+</body>
+</html>

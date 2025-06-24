@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Project Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/project_details.css">
+</head>
+<body>
+    <div class="container">
+        <header class="project-header">
+            <a href="../pages/projects.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            <div class="header-actions">
+                <button class="btn-secondary">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="btn-primary">
+                    <i class="fas fa-edit"></i> Edit Project
+                </button>
+            </div>
+        </header>
+
+        <div class="project-title-section">
+            <div class="title-wrapper">
+                <h1 id="project-title">Website Redesign</h1>
+                <span class="status-badge status-in-progress">In Progress</span>
+            </div>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span id="project-dates">Jun 1, 2023 - Jul 15, 2023</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <span id="project-team">John, Sarah, Mike</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-tasks"></i>
+                    <span id="project-progress">65% Complete</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="tasks">Tasks</button>
+            <button class="tab-btn" data-tab="kanban">Kanban</button>
+            <button class="tab-btn" data-tab="calendar">Calendar</button>
+            <button class="tab-btn" data-tab="activity">Activity</button>
+        </div>
+
+        <div class="tab-content active" id="overview-tab">
+            <section class="project-overview">
+                <div class="card">
+                    <h2>Description</h2>
+                    <p id="project-description">Complete redesign of company website with modern UI/UX, improved navigation, and responsive design for all devices. The project includes new content creation, SEO optimization, and integration with our CRM system.</p>
+                </div>
+                
+                <div class="card">
+                    <h2>Team Members</h2>
+                    <div class="team-members" id="project-members">
+                        <div class="team-member">
+                            <div class="avatar">J</div>
+                            <span>John</span>
+                        </div>
+                        <div class="team-member">
+                            <div class="avatar">S</div>
+                            <span>Sarah</span>
+                        </div>
+                        <div class="team-member">
+                            <div class="avatar">M</div>
+                            <span>Mike</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>Project Timeline</h2>
+                    <div class="timeline-container">
+                        <div class="timeline-progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                        <div class="milestones">
+                            <div class="milestone completed">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-info">
+                                    <div class="milestone-date">Jun 1, 2023</div>
+                                    <div class="milestone-title">Project Kickoff</div>
+                                </div>
+                            </div>
+                            <div class="milestone completed">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-info">
+                                    <div class="milestone-date">Jun 15, 2023</div>
+                                    <div class="milestone-title">Design Approval</div>
+                                </div>
+                            </div>
+                            <div class="milestone current">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-info">
+                                    <div class="milestone-date">Jun 30, 2023</div>
+                                    <div class="milestone-title">Development Phase</div>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-info">
+                                    <div class="milestone-date">Jul 10, 2023</div>
+                                    <div class="milestone-title">Testing</div>
+                                </div>
+                            </div>
+                            <div class="milestone">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-info">
+                                    <div class="milestone-date">Jul 15, 2023</div>
+                                    <div class="milestone-title">Launch</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="tasks-tab">
+            <section class="tasks-section">
+                <div class="section-header">
+                    <h2>Project Tasks</h2>
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </div>
+                
+                <div class="task-groups">
+                    <div class="task-group">
+                        <h3>To Do <span class="task-count">(3)</span></h3>
+                        <div class="task-list">
+                            <div class="task-card">
+                                <div class="task-title">SEO Optimization</div>
+                                <div class="task-meta">
+                                    <span class="priority medium">Medium</span>
+                                    <span class="assignee">Assigned to Sarah</span>
+                                </div>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-title">Mobile Testing</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Unassigned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-group">
+                        <h3>In Progress <span class="task-count">(4)</span></h3>
+                        <div class="task-list">
+                            <div class="task-card">
+                                <div class="task-title">Homepage Development</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to Mike</span>
+                                </div>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-title">Product Pages</div>
+                                <div class="task-meta">
+                                    <span class="priority medium">Medium</span>
+                                    <span class="assignee">Assigned to John</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-group">
+                        <h3>Completed <span class="task-count">(2)</span></h3>
+                        <div class="task-list">
+                            <div class="task-card">
+                                <div class="task-title">UI Design</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to Sarah</span>
+                                </div>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-title">Wireframes</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to John</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="kanban-tab">
+            <section class="kanban-section">
+                <div class="section-header">
+                    <h2>Kanban Board</h2>
+                    <div class="view-options">
+                        <button class="btn-secondary active">
+                            <i class="fas fa-th-large"></i> Board
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="kanban-board">
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>To Do</h3>
+                            <span class="column-count">3</span>
+                        </div>
+                        <div class="column-tasks">
+                            <div class="kanban-card">
+                                <div class="task-title">SEO Optimization</div>
+                                <div class="task-meta">
+                                    <span class="priority medium">Medium</span>
+                                    <span class="assignee">Assigned to Sarah</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card">
+                                <div class="task-title">Mobile Testing</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Unassigned</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="add-task-btn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>In Progress</h3>
+                            <span class="column-count">4</span>
+                        </div>
+                        <div class="column-tasks">
+                            <div class="kanban-card">
+                                <div class="task-title">Homepage Development</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to Mike</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card">
+                                <div class="task-title">Product Pages</div>
+                                <div class="task-meta">
+                                    <span class="priority medium">Medium</span>
+                                    <span class="assignee">Assigned to John</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="add-task-btn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>Review</h3>
+                            <span class="column-count">1</span>
+                        </div>
+                        <div class="column-tasks">
+                            <div class="kanban-card">
+                                <div class="task-title">Contact Form</div>
+                                <div class="task-meta">
+                                    <span class="priority medium">Medium</span>
+                                    <span class="assignee">Assigned to Mike</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="add-task-btn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>Done</h3>
+                            <span class="column-count">2</span>
+                        </div>
+                        <div class="column-tasks">
+                            <div class="kanban-card">
+                                <div class="task-title">UI Design</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to Sarah</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card">
+                                <div class="task-title">Wireframes</div>
+                                <div class="task-meta">
+                                    <span class="priority high">High</span>
+                                    <span class="assignee">Assigned to John</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="add-task-btn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="calendar-tab">
+            <section class="calendar-section">
+                <div class="section-header">
+                    <h2>Project Calendar</h2>
+                    <div class="calendar-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i> Add Event
+                        </button>
+                        <div class="view-options">
+                            <button class="btn-secondary active">Month</button>
+                            <button class="btn-secondary">Week</button>
+                            <button class="btn-secondary">Day</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="nav-button">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h3>June 2023</h3>
+                        <button class="nav-button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="calendar-weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    
+                    <div class="calendar-days">
+                        <!-- Calendar will be populated by JavaScript -->
+                        <div class="calendar-day empty">28</div>
+                        <div class="calendar-day empty">29</div>
+                        <div class="calendar-day empty">30</div>
+                        <div class="calendar-day empty">31</div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <!-- More days... -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-content" id="activity-tab">
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2>Project Activity</h2>
+                    <div class="activity-filter">
+                        <select>
+                            <option>All Activity</option>
+                            <option>Tasks</option>
+                            <option>Comments</option>
+                            <option>Files</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <div class="activity-avatar">J</div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span class="activity-user">John</span>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-action">
+                                created task <a href="#">Homepage development</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">S</div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span class="activity-user">Sarah</span>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                            <div class="activity-action">
+                                completed <a href="#">UI Design</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">M</div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span class="activity-user">Mike</span>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                            <div class="activity-action">
+                                commented on <a href="#">Product pages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div class="modal" id="task-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Task Title</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-start">Start Date</label>
+                        <input type="date" id="task-start">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-due">Due Date</label>
+                        <input type="date" id="task-due">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-status">Status</label>
+                        <select id="task-status">
+                            <option value="To Do">To Do</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Review">Review</option>
+                            <option value="Done">Done</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="task-assignee">Assign To</label>
+                    <select id="task-assignee">
+                        <option value="">Unassigned</option>
+                        <option value="John">John</option>
+                        <option value="Sarah">Sarah</option>
+                        <option value="Mike">Mike</option>
+                        <option value="Emma">Emma</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-task">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/project_details.js"></script>
+</body>
+</html>

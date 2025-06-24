@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members | Project Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/team.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Team Members</h1>
+        </header>
+
+        <div class="team-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search team members...">
+            </div>
+            <div class="filter-options">
+                <select id="role-filter">
+                    <option value="">All Roles</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="QA">QA Engineer</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="team-members-grid">
+            <!-- Team members will be loaded here dynamically -->
+        </div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/team.js"></script>
+</body>
+</html>
