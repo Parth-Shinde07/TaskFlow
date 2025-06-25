@@ -7,11 +7,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/dashboard.css" />
+    <style>
+      /* Mobile menu button (hidden by default) */
+      .mobile-menu-btn {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+      }
+      
+      /* Responsive sidebar */
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+        
+        .sidebar {
+          position: fixed;
+          z-index: 999;
+          width: 250px;
+          height: 100%;
+          left: -250px;
+          transition: all 0.3s;
+        }
+        
+        .sidebar.active {
+          left: 0;
+        }
+        
+        .main-content {
+          margin-left: 0;
+          width: 100%;
+        }
+        
+        .projects-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .projects-container {
+          grid-template-columns: 1fr;
+        }
+        
+        .middle-container {
+          flex-direction: column;
+        }
+        
+        .chart-wrapper, .deadline-wrapper {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    
     <div class="container">
       <!-- sidebar-section -->
-      <div class="sidebar">
+      <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
           <div class="logo">
             <i class="fas fa-tasks"></i>
@@ -34,6 +98,7 @@
                   <span>Projects</span>
                 </a>
               </li>
+              <li>
                 <a href="calender.html">
                   <i class="fas fa-calendar-alt"></i>
                   <span>Calendar</span>
@@ -57,106 +122,155 @@
       </div>
 
       <!-- main section -->
-  <main class="main-content">
-   <section class="projects-container">
-    <article class="project-card" id="project1" tabindex="0" aria-labelledby="project1-title">
-      <header class="project-header">
-        <h1 id="project1-title" class="project-title">Total Projects</h1>
-      </header>
-      <div class="project-content">
-        <h3>24</h3>
-      </div>
-    </article>
-    
-    <article class="project-card" id="project1" tabindex="0" aria-labelledby="project1-title">
-      <header class="project-header">
-        <h1 id="project1-title" class="project-title">Completed</h1>
-      </header>
-      <div class="project-content">
-        <h3>15</h3>
-      </div>
-    </article>
+      <main class="main-content">
+        <section class="projects-container">
+          <article class="project-card" id="project1" tabindex="0" aria-labelledby="project1-title">
+            <header class="project-header">
+              <h1 id="project1-title" class="project-title">Total Projects</h1>
+            </header>
+            <div class="project-content">
+              <h3>24</h3>
+            </div>
+          </article>
+          
+          <article class="project-card" id="project2" tabindex="0" aria-labelledby="project2-title">
+            <header class="project-header">
+              <h1 id="project2-title" class="project-title">Completed</h1>
+            </header>
+            <div class="project-content">
+              <h3>15</h3>
+            </div>
+          </article>
 
-    <article class="project-card" id="project1" tabindex="0" aria-labelledby="project1-title">
-      <header class="project-header">
-        <h1 id="project1-title" class="project-title">In Progress</h1>
-      </header>
-      <div class="project-content">
-        <h3>5</h3>
-      </div>
-    </article>
+          <article class="project-card" id="project3" tabindex="0" aria-labelledby="project3-title">
+            <header class="project-header">
+              <h1 id="project3-title" class="project-title">In Progress</h1>
+            </header>
+            <div class="project-content">
+              <h3>5</h3>
+            </div>
+          </article>
 
-    <article class="project-card" id="project1" tabindex="0" aria-labelledby="project1-title">
-      <header class="project-header">
-        <h1 id="project1-title" class="project-title">Pending</h1>
-      </header>
-      <div class="project-content">
-        <h3>4</h3>
-      </div>
-    </article>
-   </section>
+          <article class="project-card" id="project4" tabindex="0" aria-labelledby="project4-title">
+            <header class="project-header">
+              <h1 id="project4-title" class="project-title">Pending</h1>
+            </header>
+            <div class="project-content">
+              <h3>4</h3>
+            </div>
+          </article>
+        </section>
 
+        <div class="middle-container">
+          <section class="chart-wrapper">
+            <h3>Project Status</h3>
+            <div class="chart-container">
+              <canvas id="myChart"></canvas>
+            </div>
+          </section>
 
-   <div class="middle-container">
-   <section class="chart-wrapper">
-    <h3>Project Status</h3>
-    <div class="chart-container">
-      <canvas id="myChart"></canvas>
-    </div>
-   </section>
+          <section class="deadline-wrapper">
+            <h3>Upcoming Deadlines</h3>
+            <div class="deadlines">
+              <div class="deadline-priority high">High Priority</div>
+              <div class="deadline-title">Complete Project Proposal</div>
+              <div class="deadline-date">Due: June 25, 2025</div>
+            </div>
 
-   <section class="deadline-wrapper">
-    <h3>Upcoming Deadlines</h3>
-    <div class="deadlines">
-      <div class="deadline-priority high">High Priority</div>
-      <div class="deadline-title">Complete Project Proposal</div>
-      <div class="deadline-date">Due:June 25,2025</div>
-    </div>
+            <div class="deadlines">
+              <div class="deadline-priority medium">Medium Priority</div>
+              <div class="deadline-title">Update Website</div>
+              <div class="deadline-date">Due: Jul 4, 2025</div>
+            </div>
 
-    <div class="deadlines">
-      <div class="deadline-priority medium">Medium Priority</div>
-      <div class="deadline-title">Update Website </div>
-      <div class="deadline-date">Due:Jul 4,2025</div>
-    </div>
-
-    <div class="deadlines">
-      <div class="deadline-priority low">Low Priority</div>
-      <div class="deadline-title">Make PPT</div>
-      <div class="deadline-date">Due:Jul 10,2025</div>
-    </div>
-   </section>
-   </div>
+            <div class="deadlines">
+              <div class="deadline-priority low">Low Priority</div>
+              <div class="deadline-title">Make PPT</div>
+              <div class="deadline-date">Due: Jul 10, 2025</div>
+            </div>
+          </section>
+        </div>
   
-    <section class="activity-log">
-      <h3>Recent Activity</h3>
-      <div class="activity items">
-        <div class="activity-item">
-         <div class="activity-details">
-           <strong>Josh</strong> completed the project proposal
-         </div>
-         <div class="activity-time">2 hours ago</div>
-        </div>
-        
-        <div class="activity-item">
-         <div class="activity-details">
-           <strong>Parth</strong> updated website
-         </div>
-         <div class="activity-time">1 hours ago</div>
-        </div>
+        <section class="activity-log">
+          <h3>Recent Activity</h3>
+          <div class="activity-items">
+            <div class="activity-item">
+              <div class="activity-details">
+                <strong>Josh</strong> completed the project proposal
+              </div>
+              <div class="activity-time">2 hours ago</div>
+            </div>
+            
+            <div class="activity-item">
+              <div class="activity-details">
+                <strong>Parth</strong> updated website
+              </div>
+              <div class="activity-time">1 hour ago</div>
+            </div>
 
-        <div class="activity-item">
-         <div class="activity-details">
-           <strong>Andrew</strong> completed landing page
-         </div>
-         <div class="activity-time">2 hours ago</div>
-        </div>
-      </div>
-    </section>
-   </div>
-  </main>
+            <div class="activity-item">
+              <div class="activity-details">
+                <strong>Andrew</strong> completed landing page
+              </div>
+              <div class="activity-time">2 hours ago</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
  
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<script src="../js/dashboard.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script>
+      // Mobile menu toggle functionality
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        document.getElementById('sidebar').classList.toggle('active');
+      });
+      
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener('click', function(event) {
+        const sidebar = document.getElementById('sidebar');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(event.target) && 
+            event.target !== mobileBtn && 
+            !mobileBtn.contains(event.target)) {
+          sidebar.classList.remove('active');
+        }
+      });
+      
+      // Chart initialization (example)
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Completed', 'In Progress', 'Pending'],
+          datasets: [{
+            label: 'Project Status',
+            data: [15, 5, 4],
+            backgroundColor: [
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+              'rgba(75, 192, 192, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
