@@ -22,3 +22,22 @@ new Chart(ctx, {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+  const overlay = document.querySelector('.overlay');
+  
+  menuBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('active');
+    mainContent.classList.toggle('sidebar-open');
+    overlay.classList.toggle('active');
+  });
+  
+  overlay.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    mainContent.classList.remove('sidebar-open');
+    overlay.classList.remove('active');
+  });
+});
