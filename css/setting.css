@@ -265,3 +265,102 @@ input:checked + .slider:before {
     margin-left: 10px;
     vertical-align: middle;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .settings-container {
+        padding: 20px;
+    }
+    
+    .profile-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .profile-picture {
+        flex: 0 0 auto;
+        margin-bottom: 15px;
+    }
+    
+    .profile-info {
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .theme-toggle {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-container {
+        padding: 15px;
+    }
+    
+    .settings-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 6px 10px;
+    }
+    
+    .edit-profile-btn {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .switch {
+        width: 50px;
+        height: 28px;
+    }
+    
+    .slider:before {
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+    .profile-picture img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .change-photo-btn {
+        font-size: 0.8rem;
+    }
+    
+    .checkbox-container {
+        padding-left: 30px;
+    }
+    
+    .checkmark {
+        height: 20px;
+        width: 20px;
+    }
+    
+    .checkbox-container .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 4px;
+        height: 8px;
+    }
+}
