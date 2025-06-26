@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Sample data for team members
     let teamMembers = [
         {
             id: 1,
@@ -53,7 +52,6 @@ $(document).ready(function() {
         }
     ];
 
-    // DOM elements
     const $teamMembersGrid = $('.team-members-grid');
     const $searchInput = $('.search-box input');
     const $roleFilter = $('#role-filter');
@@ -61,13 +59,10 @@ $(document).ready(function() {
     const $memberModal = $('#member-modal');
     const $memberForm = $('#member-form');
 
-    // Current member being edited
     let currentMemberId = null;
 
-    // Initialize the page
     renderTeamMembers(teamMembers);
 
-    // Event Listeners
     $addMemberBtn.on('click', function() {
         $('#modal-title').text('Add Team Member');
         $('#member-id').val('');
@@ -92,7 +87,6 @@ $(document).ready(function() {
         filterMembers();
     });
 
-    // Functions
     function renderTeamMembers(members) {
         $teamMembersGrid.empty();
         
@@ -106,7 +100,6 @@ $(document).ready(function() {
             $teamMembersGrid.append(memberCard);
         });
 
-        // Add event listeners to edit and delete buttons
         $('.edit-member').on('click', function() {
             const memberId = $(this).data('id');
             editMember(memberId);

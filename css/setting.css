@@ -53,7 +53,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Profile Section Styles */
 .profile-content {
     display: flex;
     flex-wrap: wrap;
@@ -137,7 +136,6 @@ body {
     opacity: 0.9;
 }
 
-/* Theme Toggle Styles */
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -195,7 +193,6 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Notification Preferences Styles */
 .preference-item {
     margin-bottom: 15px;
 }
@@ -266,7 +263,6 @@ input:checked + .slider:before {
     vertical-align: middle;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -337,7 +333,6 @@ input:checked + .slider:before {
     }
 }
 
-/* For very small screens */
 @media (max-width: 360px) {
     .profile-picture img {
         width: 80px;

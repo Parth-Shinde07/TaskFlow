@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Sample data for projects
     let projects = [
         {
             id: 1,
@@ -53,7 +52,6 @@ $(document).ready(function() {
         }
     ];
 
-    // DOM elements
     const $projectsContainer = $('.projects-container');
     const $listViewBtn = $('#list-view');
     const $gridViewBtn = $('#grid-view');
@@ -63,13 +61,10 @@ $(document).ready(function() {
     const $projectForm = $('#project-form');
     const $searchInput = $('.search-box input');
 
-    // Current project being edited/deleted
     let currentProjectId = null;
 
-    // Initialize the page
     renderProjects(projects);
 
-    // Event Listeners
     $listViewBtn.on('click', function() {
         $projectsContainer.removeClass('grid-view').addClass('list-view');
         $listViewBtn.addClass('active');
@@ -112,7 +107,7 @@ $(document).ready(function() {
         renderProjects(filteredProjects);
     });
 
-    // Functions
+    
     function renderProjects(projectsToRender) {
         $projectsContainer.empty();
         
@@ -126,7 +121,6 @@ $(document).ready(function() {
             $projectsContainer.append(projectCard);
         });
 
-        // Add event listeners to edit and delete buttons
         $('.edit-project').on('click', function() {
             const projectId = $(this).data('id');
             editProject(projectId);
@@ -239,13 +233,11 @@ $(document).ready(function() {
         };
 
         if (id) {
-            // Update existing project
             const index = projects.findIndex(p => p.id == id);
             if (index !== -1) {
                 projects[index] = projectData;
             }
         } else {
-            // Add new project
             projects.push(projectData);
         }
 

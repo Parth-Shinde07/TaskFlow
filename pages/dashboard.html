@@ -227,7 +227,7 @@
         document.getElementById('sidebar').classList.toggle('active');
       });
       
-      // Close sidebar when clicking outside on mobile
+      // Close sidebar
       document.addEventListener('click', function(event) {
         const sidebar = document.getElementById('sidebar');
         const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -240,7 +240,7 @@
         }
       });
       
-      // Chart initialization (example)
+      // Chart initialization 
       const ctx = document.getElementById('myChart').getContext('2d');
       const myChart = new Chart(ctx, {
         type: 'bar',
